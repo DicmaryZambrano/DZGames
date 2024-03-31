@@ -1,0 +1,56 @@
+<nav class="topnav" id="myTopnav">
+  <a href="/index.html" class="logo">DZ GAMES</a>
+  <a href="javascript:void(0);" class="icon" onclick="openMenu()">&#9776;</a>
+  <div class="action-buttons">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search.."
+        name="search"
+        id="searchInput"
+      />
+      <button
+        class="search-popup btn"
+        type="button"
+        onclick="openSearchPopup()"
+      >
+        &#128269;
+      </button>
+      <button class="search-button btn" type="button" onclick="search()">
+        &#128269;
+      </button>
+    </div>
+    <a href="/wishlist/index.html"><img src="" alt="Heart" /></a>
+  </div>
+  <a href="/index.html">Home</a>
+  <a href="/explore/index.html">Game Gallery</a>
+  <a href="/wishlist/index.html">Wishlist</a>
+  <div class="dropdown" id="genresDropdown">
+    <button class="dropbtn" onclick="toggleDropdown('genresDropdown')">
+      Explore by Genres
+      <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="/explore/index.html">Adventure</a>
+      <a href="/explore/index.html">RPG</a>
+      <a href="/explore/index.html">FPS</a>
+      <a href="/explore/index.html">Puzzle</a>
+      <a href="/explore/index.html">Simulator</a>
+      <a href="/explore/index.html">Survival</a>
+    </div>
+  </div>
+  <div class="dropdown" id="platformDropdown">
+    <button class="dropbtn" onclick="toggleDropdown('platformDropdown')">
+      Explore by Platform
+      <span>&#9660;</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="/explore/index.html">PS3</a>
+      <a href="/explore/index.html">PS4</a>
+      <a href="/explore/index.html">XBOX</a>
+      <a href="/explore/index.html">SWITCH</a>
+      <a href="/explore/index.html">STEAM</a>
+      <a href="/explore/index.html">PC</a>
+    </div>
+  </div>
+</nav>

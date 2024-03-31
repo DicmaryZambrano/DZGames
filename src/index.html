@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DZ GameShop - Home</title>
+    <meta name="author" content="Dicmary Zambrano" />
+    <meta name="description" content="DZ GameShop" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.ico" />
+    <script src="js/main.js" type="module"></script>
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div id="hero">
+        <div class="slide-show">
+          <picture class="hero-slide current">
+            <source media="(max-width: 500px)" srcset="images/" />
+            <source media="(max-width: 1000px)" srcset="images/" />
+            <img src="" alt="" width="" height="" />
+          </picture>
+          <picture class="hero-slide">
+            <source media="(max-width: 500px)" srcset="images/" />
+            <source media="(max-width: 1000px)" srcset="images/" />
+            <img src="" alt="" width="" height="" />
+          </picture>
+          <picture class="hero-slide">
+            <source media="(max-width: 500px)" srcset="images/" />
+            <source media="(max-width: 1000px)" srcset="images/" />
+            <img src="" alt="" width="" height="" />
+          </picture>
+          <picture class="hero-slide">
+            <source media="(max-width: 500px)" srcset="images/" />
+            <source media="(max-width: 1000px)" srcset="images/" />
+            <img src="" alt="" width="" height="" />
+          </picture>
+          <picture class="hero-slide">
+            <source media="(max-width: 500px)" srcset="images/" />
+            <source media="(max-width: 1000px)" srcset="images/" />
+            <img src="" alt="" width="" height="" />
+          </picture>
+        </div>
+        <div class="overlay"></div>
+        <div class="darken"></div>
+        <section id="hero-msg">
+          <h1>Explore and discover new games!</h1>
+        </section>
+      </div>
+    </header>
+    <main id="home">
+      <aside class="event-ad" id="eventAd">
+        <button class="close-btn" onclick="closeEventAd()">X</button>
+        <figure>
+          <img src="event-image.jpg" alt="Event Image" class="event-image" />
+          <figcaption class="event-title">Event Title</figcaption>
+        </figure>
+        <div class="event-details">
+          <p>
+            <strong>Dates:</strong>
+            <time datetime="YYYY-MM-DD">Start Date</time> -
+            <time datetime="YYYY-MM-DD">End Date</time>
+          </p>
+          <p class="event-description">
+            Event Description Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Twitter</a>
+          <!-- Add more social links as needed -->
+        </div>
+      </aside>
+
+      <section id="popularGames">
+        <h2>Popular Games</h2>
+        <div class="info-icon-container">
+          <span class="info-icon">i</span>
+          <span class="tooltip-content"
+            >This section provides information about trending games right
+            now.</span
+          >
+        </div>
+        <ul class="game-list">
+          <li class="game-card">
+            <div class="game-dlc-tag" aria-hidden="true" style="display: none">
+              DLC
+            </div>
+            <img
+              src="path-to-game-image.jpg"
+              alt="Game image description"
+              class="game-image"
+            />
+            <h3 class="game-title">Game Title Here</h3>
+            <ul class="game-info">
+              <li>Platform: PS4</li>
+              <li>Category: RPG</li>
+              <!-- Additional tags as needed -->
+            </ul>
+            <p class="game-desc">game description</p>
+          </li>
+        </ul>
+      </section>
+      <section id="explorePlatforms">
+        <h2>Explore by Platforms</h2>
+        <div class="info-icon-container">
+          <span class="info-icon">i</span>
+          <span class="tooltip-content"
+            >This section provides information about available platforms that
+            you can explore in the game gallery.</span
+          >
+        </div>
+        <ul class="platform-list">
+          <li class="platform-item">
+            <a href="/explore/platform-name" class="platform-link">
+              <img src="path-to-icon" alt="Genre Icon" class="platform-icon" />
+              <span>Platform Name</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section id="ps4Games">
+        <h2>Popular PS4 Games</h2>
+        <div class="info-icon-container">
+          <span class="info-icon">i</span>
+          <span class="tooltip-content"
+            >This section provides information about popular games or dlc for
+            the PS4 console.</span
+          >
+        </div>
+        <ul class="game-list">
+          <li class="game-card">
+            <div class="game-dlc-tag" aria-hidden="true" style="display: none">
+              DLC
+            </div>
+            <img
+              src="path-to-game-image.jpg"
+              alt="Game image description"
+              class="game-image"
+            />
+            <h3 class="game-title">Game Title Here</h3>
+            <ul class="game-info">
+              <li>Platform: PS4</li>
+              <li>Category: RPG</li>
+              <!-- Additional tags as needed -->
+            </ul>
+            <p class="game-desc">game description</p>
+          </li>
+        </ul>
+      </section>
+      <section id="exploreGenres">
+        <h2>Explore by Genres</h2>
+        <div class="info-icon-container">
+          <span class="info-icon">i</span>
+          <span class="tooltip-content"
+            >This section provides information about available genres that you
+            can explore in the game gallery.</span
+          >
+        </div>
+        <ul class="category-list">
+          <li class="category-item">
+            <a href="/explore/genre-name" class="category-link">
+              <img src="path-to-icon" alt="Genre Icon" class="category-icon" />
+              <span>Genre Name</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer id="mainFooter"></footer>
+  </body>
+</html>
