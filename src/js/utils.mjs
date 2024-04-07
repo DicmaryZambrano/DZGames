@@ -61,11 +61,16 @@ export async function loadTemplate(path) {
 
 // Load the header and footer using templates
 export async function loadHeaderFooter(headerId, footerId, headerPath, footerPath) {
-  const headerContent = await loadTemplate(headerPath);
-  const footerContent = await loadTemplate(footerPath);
+  const headerPromise = loadTemplate(headerPath);
+  const footerPromise = loadTemplate(footerPath);
 
-  renderWithTemplate(headerContent, headerId);
-  renderWithTemplate(footerContent, footerId);
+  const [headerContent, footerContent] = await Promise.all([headerPromise, footerPromise]);
+
+  renderWithTemplate(headerContent, headerId, (data) => {return data}, "afterbegin");
+  renderWithTemplate(footerContent, footerId, (data) => {return data}, "afterbegin");
+  
+  // Return a promise that resolves when both header and footer are loaded
+  return Promise.resolve();
 }
 
 // Fetch DOM from partials

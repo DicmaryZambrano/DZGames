@@ -1,33 +1,28 @@
-import gameDetails from "./GameList.mjs";
-import { getParam } from "./utils.mjs";
+import { loadHeaderFooter, setClick } from "./utils.mjs";
 
-const pokeDetailsCardFunc = function (game) {
-  return ` 
-  <div class="game-card">
-    <img
-      src=${game.sprites.front_default}
-      alt=${game.name}
-    />
-    <img
-    src=${game.sprites.back_default}
-    alt=${game.name}
-    />
-    <h3 class="game-card__name">${game.name}</h3>
-    <h4 class="game-card__type">${game.types[0].type.name}</h4>
-    <p>
-      <span class="game-card__weight">weight= ${game.weight}</span>
-      <span class="game-card__moves">moves= ${game.moves[0].move.name},${game.moves[1].move.name},${game.moves[2].move.name}</span>
-    </p>
-  </div>
-  `;
-};
+(async () => {
+  // Wait for the header and footer to be loaded
+  await loadHeaderFooter(
+    "#mainHeader",
+    "#mainFooter",
+    "../partials/header.html",
+    "../partials/footer.html",
+  );
 
+  // Event listener setup
+  const openFunc = function openSearchBox() {
+    document.getElementById("searchOverlay").classList.add("overlay-open");
+  };
 
-const gameName = getParam("game");
+  const closeFunc = function closeSearchBox() {
+    document.getElementById("searchOverlay").classList.remove("overlay-open");
+  };
 
-const gameDetails = new gameDetails(
-  gameName,
-  "#game",
-  pokeDetailsCardFunc,
-);
-gameDetails.init();
+  const searchFunc = function search() {
+    document.getElementById("searchOverlay").classList.remove("overlay-open");
+  };
+
+  setClick("#closePopup", closeFunc);
+  setClick("#openPopup", openFunc);
+  setClick("#searchBtn", searchFunc);
+})();
