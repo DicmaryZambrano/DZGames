@@ -1,4 +1,4 @@
-import { loadHeaderFooter, setClick } from "./utils.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 
 (async () => {
   // Wait for the header and footer to be loaded
@@ -9,7 +9,7 @@ import { loadHeaderFooter, setClick } from "./utils.mjs";
     "../partials/footer.html",
   );
 
-  // Event listener setup
+  //Event listener setup
   const openFunc = function openSearchBox() {
     document.getElementById("searchOverlay").classList.add("overlay-open");
   };
@@ -19,12 +19,12 @@ import { loadHeaderFooter, setClick } from "./utils.mjs";
   };
 
   const searchFunc = function search() {
-    document.getElementById("searchOverlay").classList.remove("overlay-open");
+    console.log("Hello!");
   };
 
-  setClick("#closePopup", closeFunc);
-  setClick("#openPopup", openFunc);
-  setClick("#searchBtn", searchFunc);
+  document.querySelector("#closePopup").addEventListener("click", closeFunc);
+  document.querySelector("#openPopup").addEventListener("click", openFunc);
+  document.querySelector("#searchBtn").addEventListener("click", searchFunc);
 })();
 
 const gameCardFunction = function (game) {

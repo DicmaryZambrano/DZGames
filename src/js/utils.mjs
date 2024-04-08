@@ -31,17 +31,6 @@ export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
 
-export function setClick(selector, callback) {
-  const element = qs(selector);
-  element.addEventListener("touchend", preventDefaultAndCallback);
-  element.addEventListener("click", callback);
-
-  function preventDefaultAndCallback(event) {
-    event.preventDefault();
-    callback();
-  }
-}
-
 // Retrieve data from local storage
 export function getLocalStorage(key) {
   const data = localStorage.getItem(key);
