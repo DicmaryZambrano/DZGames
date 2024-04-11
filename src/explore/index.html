@@ -30,6 +30,7 @@
         />
         <button id="openFilterPopup">Filter and Order</button>
       </div>
+      <aside id="exploreFilter"></aside>
       <section>
         <img src="" alt="" />
         <h2>Platform/Category</h2>
@@ -38,25 +39,28 @@
           officia eius similique laborum minus inventore aut, quo quaerat, totam
           architecto a ex quia atque nulla alias nostrum velit aliquid dolorem?
         </p>
-        <ul class="game-list">
-          <li class="game-card">
-            <div class="game-dlc-tag" aria-hidden="true" style="display: none">
-              DLC
-            </div>
-            <img
-              src="path-to-game-image.jpg"
-              alt="Game image description"
-              class="game-image"
-            />
-            <h3 class="game-title">Game Title Here</h3>
-            <ul class="game-info">
-              <li>Platform: PS4</li>
-              <li>Category: RPG</li>
-              <!-- Additional tags as needed -->
-            </ul>
-            <p class="game-desc">game description</p>
-          </li>
-        </ul>
+        <ul class="game-list" aria-live="polite"></ul>
+        <nav class="pagination-container">
+          <button
+            class="pagination-button"
+            id="prev-button"
+            title="Previous page"
+            aria-label="Previous page"
+          >
+            &lt;
+          </button>
+
+          <div id="pagination-numbers"></div>
+
+          <button
+            class="pagination-button"
+            id="next-button"
+            title="Next page"
+            aria-label="Next page"
+          >
+            &gt;
+          </button>
+        </nav>
       </section>
     </main>
     <footer id="mainFooter"></footer>

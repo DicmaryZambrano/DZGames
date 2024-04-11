@@ -62,6 +62,13 @@ export async function loadHeaderFooter(headerId, footerId, headerPath, footerPat
   return Promise.resolve();
 }
 
+// Load the header and footer using templates
+export async function loadFilters(filterId, filterPath) {
+  const filterContent = await loadTemplate(filterPath);
+
+  renderWithTemplate(filterContent, filterId, (data) => {return data}, "afterbegin");
+}
+
 // Fetch DOM from partials
 async function getTemplate(path) {
   const response = await fetch(path);
@@ -91,7 +98,72 @@ export function removeAllAlerts() {
   alerts.forEach(alert => alert.remove());
 }
 
-export function getCategory(category) {
+export function convertUnixToJson(unixTimestamp) {
+  const dateJson = {};
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const date = new Date(unixTimestamp * 1000);
+  const year = date.getFullYear();
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const formattedDate = `${month} ${day}, ${year}.`;
+
+  const yearsAgo = calculateAge(year);
+
+  dateJson.formattedDate = formattedDate;
+  dateJson.yearsAgo = yearsAgo;
+
+  return dateJson;
+}
+
+export function calculateAge(year){
+    // Calculate how many years ago
+    const currentYear = new Date().getFullYear();
+    const yearsAgo = currentYear - year;
+    return yearsAgo;
+}
+
+export function getWebsiteCategory(category) {
+  switch(category) {
+    case 1:
+      return 'Official';
+    case 2:
+      return 'Wikia';
+    case 3:
+      return 'Wikipedia';
+    case 4:
+      return 'Facebook';
+    case 5:
+      return 'Twitter';
+    case 6:
+      return 'Twitch';
+    case 8:
+      return 'Instagram';
+    case 9:
+      return 'YouTube';
+    case 10:
+      return 'iPhone';
+    case 11:
+      return 'iPad';
+    case 12:
+      return 'Android';
+    case 13:
+      return 'Steam';
+    case 14:
+      return 'Reddit';
+    case 15:
+      return 'Itch.io';
+    case 16:
+      return 'Epic Games';
+    case 17:
+      return 'GOG';
+    case 18:
+      return 'Discord';
+    default:
+      return 'Unknown';
+  }
+}
+
+export function getGameCategory(category) {
   switch(category) {
     case 0:
       return 'Game';
@@ -123,25 +195,6 @@ export function getCategory(category) {
       return 'Pack';
     case 14:
       return 'Update';
-    default:
-      return 'Unknown';
-  }
-};
-
-export function getGameMode(mode) {
-  switch(mode) {
-    case 1:
-      return 'Single player';
-    case 2:
-      return 'Multiplayer';
-    case 3:
-      return 'Co-op';
-    case 4:
-      return 'Split screen';
-    case 5:
-      return 'MMO';
-    case 6:
-      return 'Battle Royale';
     default:
       return 'Unknown';
   }

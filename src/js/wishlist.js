@@ -1,4 +1,4 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, loadFilters, alertMessage } from "./utils.mjs";
 
 (async () => {
   // Wait for the header and footer to be loaded
@@ -8,6 +8,7 @@ import { loadHeaderFooter } from "./utils.mjs";
     "../partials/header.html",
     "../partials/footer.html",
   );
+  await loadFilters("#exploreFilter", "../partials/filter.html");
 
   //Event listener setup
   const openFunc = function openSearchBox() {
@@ -18,11 +19,36 @@ import { loadHeaderFooter } from "./utils.mjs";
     document.getElementById("searchOverlay").classList.remove("overlay-open");
   };
 
-  const searchFunc = function search() {
-    console.log("Hello!");
-  };
-
   document.querySelector("#closePopup").addEventListener("click", closeFunc);
   document.querySelector("#openPopup").addEventListener("click", openFunc);
-  document.querySelector("#searchBtn").addEventListener("click", searchFunc);
+
+  const searchForm = document.getElementById("searchForm");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const searchInput = document.getElementById("searchInput");
+    const searchTerm = searchInput.value.trim();
+
+    if (searchTerm) {
+      window.location.href = `/explore/index.html?search=${encodeURIComponent(searchTerm)}`;
+    } else {
+      alertMessage("Please enter something to search");
+    }
+  });
+  document
+    .getElementById("filterForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      let queryString = "?";
+      formData.forEach((value, key) => {
+        if (queryString.length > 1) queryString += "&";
+        queryString +=
+          encodeURIComponent(key) + "=" + encodeURIComponent(value);
+      });
+
+      window.location.href = "/explore/index.html" + queryString;
+    });
 })();

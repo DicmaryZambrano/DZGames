@@ -6,82 +6,28 @@
         &#10005;
       </button>
     </div>
-
-    <fieldset>
-      <legend>Sorting Order</legend>
-      <label
-        ><input type="radio" name="sortingOrder" value="a-z" /> Alphabetically
-        A-Z</label
-      >
-      <label
-        ><input type="radio" name="sortingOrder" value="z-a" /> Alphabetically
-        Z-A</label
-      >
-      <label
-        ><input type="radio" name="sortingOrder" value="recent" /> Date:
-        Recent</label
-      >
-      <label
-        ><input type="radio" name="sortingOrder" value="older" /> Date:
-        Older</label
-      >
-      <label
-        ><input type="radio" name="sortingOrder" value="popularity" />
-        Popularity</label
-      >
-    </fieldset>
-
-    <fieldset>
-      <legend>Rating Range</legend>
-      <input
-        type="range"
-        name="ratingRange"
-        min="0"
-        max="100"
-        value="50"
-        oninput="ratingValue.value = this.value"
-      />
-      <output id="ratingValue">50</output>%
-    </fieldset>
-
     <fieldset>
       <legend>Type</legend>
-      <label><input type="checkbox" name="type" value="dlc" /> DLC</label>
-      <label><input type="checkbox" name="type" value="game" /> Game</label>
+      <label><input type="checkbox" name="type" value="1" /> DLC</label>
+      <label><input type="checkbox" name="type" value="0" /> Game</label>
     </fieldset>
 
     <fieldset>
       <legend>Platform</legend>
-      <label><input type="checkbox" name="platform" value="ps3" /> PS3</label>
-      <label><input type="checkbox" name="platform" value="ps4" /> PS4</label>
-      <label><input type="checkbox" name="platform" value="xbox" /> XBOX</label>
-      <label
-        ><input type="checkbox" name="platform" value="switch" /> SWITCH</label
-      >
-      <label
-        ><input type="checkbox" name="platform" value="steam" /> STEAM</label
-      >
+      <label><input type="checkbox" name="platf" value="9" /> PS3</label>
+      <label><input type="checkbox" name="platf" value="48" /> PS4</label>
+      <label><input type="checkbox" name="platf" value="11" /> XBOX</label>
+      <label><input type="checkbox" name="platf" value="130" /> SWITCH</label>
+      <label><input type="checkbox" name="platf" value="6" /> PC</label>
     </fieldset>
 
     <fieldset>
-      <legend>Category</legend>
-      <label
-        ><input type="checkbox" name="category" value="adventure" />
-        Adventure</label
-      >
-      <label><input type="checkbox" name="category" value="rpg" /> RPG</label>
-      <label><input type="checkbox" name="category" value="fps" /> FPS</label>
-      <label
-        ><input type="checkbox" name="category" value="puzzle" /> Puzzle</label
-      >
-      <label
-        ><input type="checkbox" name="category" value="simulator" />
-        Simulator</label
-      >
-      <label
-        ><input type="checkbox" name="category" value="survival" />
-        Survival</label
-      >
+      <legend>Genre</legend>
+      <label><input type="checkbox" name="genr" value="12" /> RPG</label>
+      <label><input type="checkbox" name="genr" value="5" /> FPS</label>
+      <label><input type="checkbox" name="genr" value="9" /> Puzzle</label>
+      <label><input type="checkbox" name="genr" value="13" /> Simulator</label>
+      <label><input type="checkbox" name="genr" value="7" /> Music</label>
     </fieldset>
 
     <button type="submit" id="submitFilter">Submit Filter</button>

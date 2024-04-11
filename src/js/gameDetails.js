@@ -1,4 +1,5 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, getParam, alertMessage } from "./utils.mjs";
+import GameDetails from "./GameDetails.mjs";
 
 (async () => {
   // Wait for the header and footer to be loaded
@@ -18,89 +19,31 @@ import { loadHeaderFooter } from "./utils.mjs";
     document.getElementById("searchOverlay").classList.remove("overlay-open");
   };
 
-  const searchFunc = function search() {
-    console.log("Hello!");
-  };
-
   document.querySelector("#closePopup").addEventListener("click", closeFunc);
   document.querySelector("#openPopup").addEventListener("click", openFunc);
-  document.querySelector("#searchBtn").addEventListener("click", searchFunc);
+
+  const searchForm = document.getElementById("searchForm");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const searchInput = document.getElementById("searchInput");
+    const searchTerm = searchInput.value.trim();
+
+    if (searchTerm) {
+      window.location.href = `/explore/index.html?search=${encodeURIComponent(searchTerm)}`;
+    } else {
+      alertMessage("Please enter something to search");
+    }
+  });
 })();
 
-const gameCardFunction = function (game) {
-  // Create li element
-  const li = document.createElement("li");
-  li.classList.add("game-card");
+let gameId = getParam("id");
+var body = `
+fields name,category,cover.image_id,game_modes.name,genres.name,platforms.abbreviation,aggregated_rating,screenshots.image_id,screenshots.height,screenshots.width,similar_games,themes.name,videos.video_id,videos.name,websites.url,websites.category,language_supports.language.name,language_supports.language.locale,language_supports.language_support_type.name,artworks.image_id,artworks.height,artworks.width,involved_companies.company.name,involved_companies.company.websites.url,first_release_date,dlcs;
+where id = ${gameId};
+`;
 
-  // Create div for tag if category is not null
-  if (game.category !== null) {
-    const gameTag = document.createElement("div");
-    gameTag.classList.add("game-tag");
-    gameTag.setAttribute("aria-hidden", "true");
-    gameTag.style.display = "none";
-    gameTag.textContent = game.category;
-    li.appendChild(gameTag);
-  }
+const gameDetails = new GameDetails("/games", body, "#game");
 
-  // Create image element if cover is not null
-  if (game.cover !== null) {
-    const img = document.createElement("img");
-    img.src = game.cover;
-    img.alt = `${game.name} Cover`;
-    img.height = 374;
-    img.width = 264;
-    img.classList.add("game-image");
-    li.appendChild(img);
-  } else {
-    const img = document.createElement("img");
-    img.src = "/nothing";
-    img.alt = "not found";
-    img.height = 374;
-    img.width = 264;
-    img.classList.add("game-image");
-    li.appendChild(img);
-  }
-
-  // Create h3 for game title
-  const title = document.createElement("h3");
-  title.classList.add("game-title");
-  title.innerText = game.name;
-  li.appendChild(title);
-
-  // Create ul element for game info
-  const ul = document.createElement("ul");
-  ul.classList.add("game-info");
-
-  // Create li elements for platform if platforms array is not null
-  if (game.platforms !== null) {
-    let platforms = game.platforms;
-    platforms.forEach((platform) => {
-      const platformLi = document.createElement("li");
-      platformLi.textContent = `${platform.name}`;
-      ul.appendChild(platformLi);
-    });
-  }
-
-  // Create li elements for genre if genres array is not null
-  if (game.genres !== null) {
-    let genres = game.genres;
-    genres.forEach((genre) => {
-      const genreLi = document.createElement("li");
-      genreLi.textContent = `${genre.name}`;
-      ul.appendChild(genreLi);
-    });
-  }
-
-  // Append ul to li
-  li.appendChild(ul);
-
-  // Create p element for game description if summary is not null
-  if (game.summary !== null) {
-    const desc = document.createElement("p");
-    desc.classList.add("game-desc");
-    desc.textContent = game.summary;
-    li.appendChild(desc);
-  }
-
-  return li.outerHTML;
-};
+gameDetails.init();

@@ -12,7 +12,13 @@
       /></a>
     </div>
     <div class="search-container">
-      <button class="search-popup btn" id="openPopup" type="button">
+      <button
+        class="search-popup btn"
+        id="openPopup"
+        type="button"
+        title="Search Popup"
+        aria-label="Open search menu"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -28,8 +34,14 @@
       </button>
 
       <div class="search-overlay" id="searchOverlay">
-        <form class="search-content">
-          <button class="search-btn btn" id="searchBtn" type="button">
+        <form class="search-content" id="searchForm">
+          <button
+            class="search-btn btn"
+            id="searchBtn"
+            type="button"
+            title="Search"
+            aria-label="Search"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -50,7 +62,13 @@
             id="searchInput"
             class="search-bar"
           />
-          <button class="close-btn btn" id="closePopup" type="button">
+          <button
+            class="close-btn btn"
+            id="closePopup"
+            type="button"
+            title="Close Search Popup"
+            aria-label="Close search menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -99,22 +117,19 @@
           <div class="dropdown">
             <ul>
               <li class="dropdown-link">
-                <a href="/explore/index.html">Adventure </a>
+                <a href="/explore/index.html?genr=12">RPG</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">RPG</a>
+                <a href="/explore/index.html?genr=5">FPS</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">FPS</a>
+                <a href="/explore/index.html?genr=9">Puzzle</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">Puzzle</a>
+                <a href="/explore/index.html?genr=13">Simulator</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">Simulator</a>
-              </li>
-              <li class="dropdown-link">
-                <a href="/explore/index.html">Survival</a>
+                <a href="/explore/index.html??genr=7">Music</a>
               </li>
               <div class="arrow"></div>
             </ul>
@@ -125,22 +140,19 @@
           <div class="dropdown">
             <ul>
               <li class="dropdown-link">
-                <a href="/explore/index.html">PS3</a>
+                <a href="/explore/index.html?platf=9">PS3</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">PS4</a>
+                <a href="/explore/index.html?platf=48">PS4</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">XBOX</a>
+                <a href="/explore/index.html?platf=11">XBOX</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">SWITCH</a>
+                <a href="/explore/index.html?platf=130">SWITCH</a>
               </li>
               <li class="dropdown-link">
-                <a href="/explore/index.html">STEAM</a>
-              </li>
-              <li class="dropdown-link">
-                <a href="/explore/index.html">PC</a>
+                <a href="/explore/index.html?platf=6">PC</a>
               </li>
               <div class="arrow"></div>
             </ul>

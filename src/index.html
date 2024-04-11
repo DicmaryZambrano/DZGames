@@ -21,137 +21,58 @@
     <header id="mainHeader"></header>
     <main id="home">
       <div id="hero">
-        <div class="slide-show">
-          <picture class="hero-slide current">
-            <source media="(max-width: 500px)" srcset="images/" />
-            <source media="(max-width: 1000px)" srcset="images/" />
-            <img src="" alt="" width="" height="" />
-          </picture>
-          <picture class="hero-slide">
-            <source media="(max-width: 500px)" srcset="images/" />
-            <source media="(max-width: 1000px)" srcset="images/" />
-            <img src="" alt="" width="" height="" />
-          </picture>
-          <picture class="hero-slide">
-            <source media="(max-width: 500px)" srcset="images/" />
-            <source media="(max-width: 1000px)" srcset="images/" />
-            <img src="" alt="" width="" height="" />
-          </picture>
-          <picture class="hero-slide">
-            <source media="(max-width: 500px)" srcset="images/" />
-            <source media="(max-width: 1000px)" srcset="images/" />
-            <img src="" alt="" width="" height="" />
-          </picture>
-          <picture class="hero-slide">
-            <source media="(max-width: 500px)" srcset="images/" />
-            <source media="(max-width: 1000px)" srcset="images/" />
-            <img src="" alt="" width="" height="" />
-          </picture>
-        </div>
+        <div class="slide-show"></div>
         <div class="overlay"></div>
         <div class="darken"></div>
         <section id="hero-msg">
-          <h1>Explore and discover new games!</h1>
+          <h1>Games Galore!</h1>
+          <h2>Explore and discover new games to play</h2>
         </section>
       </div>
-      <aside class="event-ad" id="eventAd">
-        <button class="close-btn">X</button>
-        <figure>
-          <img src="event-image.jpg" alt="Event Image" class="event-image" />
-          <figcaption class="event-title">Event Title</figcaption>
-        </figure>
-        <div class="event-details">
-          <p>
-            <strong>Dates:</strong>
-            <time datetime="YYYY-MM-DD">Start Date</time> -
-            <time datetime="YYYY-MM-DD">End Date</time>
-          </p>
-          <p class="event-description">
-            Event Description Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Twitter</a>
-          <!-- Add more social links as needed -->
-        </div>
-      </aside>
-
+      <section class="event-ad" id="eventAd"></section>
       <section id="popularGames">
-        <h2>Popular Games</h2>
-        <div class="info-icon-container">
-          <span class="info-icon">i</span>
-          <span class="tooltip-content"
-            >This section provides information about trending games right
-            now.</span
-          >
+        <div class="home-title">
+          <h2>Popular Games</h2>
+          <div class="tooltip-box">
+            <span class="tooltip">
+              i
+              <span class="tooltiptext"
+                >This section provides information about trending games right
+                now.</span
+              >
+            </span>
+          </div>
         </div>
-        <ul class="game-list"></ul>
+        <ul class="popular-game-list"></ul>
       </section>
       <section id="explorePlatforms">
-        <h2>Explore by Platforms</h2>
-        <div class="info-icon-container">
-          <span class="info-icon">i</span>
-          <span class="tooltip-content"
-            >This section provides information about available platforms that
-            you can explore in the game gallery.</span
-          >
+        <div class="home-title">
+          <h2>Explore by Platforms</h2>
+          <div class="tooltip-box">
+            <div class="tooltip">
+              i
+              <span class="tooltiptext"
+                >This section provides information about available platforms
+                that you can explore in the game gallery.</span
+              >
+            </div>
+          </div>
         </div>
-        <ul class="platform-list">
-          <li class="platform-item">
-            <a href="/explore/platform-name" class="platform-link">
-              <img src="path-to-icon" alt="Genre Icon" class="platform-icon" />
-              <span>Platform Name</span>
-            </a>
-          </li>
-        </ul>
       </section>
       <section id="ps4Games">
-        <h2>Popular PS4 Games</h2>
-        <div class="info-icon-container">
-          <span class="info-icon">i</span>
-          <span class="tooltip-content"
-            >This section provides information about popular games or dlc for
-            the PS4 console.</span
-          >
-        </div>
-        <ul class="game-list">
-          <li class="game-card">
-            <div class="game-dlc-tag" aria-hidden="true" style="display: none">
-              DLC
+        <div class="home-title">
+          <h2>Popular PS4 Games</h2>
+          <div class="tooltip-box">
+            <div class="tooltip">
+              i
+              <span class="tooltiptext">
+                This section provides information about popular games or dlc for
+                the PS4 console.</span
+              >
             </div>
-            <img
-              src="path-to-game-image.jpg"
-              alt="Game image description"
-              class="game-image"
-            />
-            <h3 class="game-title">Game Title Here</h3>
-            <ul class="game-info">
-              <li>Platform: PS4</li>
-              <li>Category: RPG</li>
-              <!-- Additional tags as needed -->
-            </ul>
-            <p class="game-desc">game description</p>
-          </li>
-        </ul>
-      </section>
-      <section id="exploreGenres">
-        <h2>Explore by Genres</h2>
-        <div class="info-icon-container">
-          <span class="info-icon">i</span>
-          <span class="tooltip-content"
-            >This section provides information about available genres that you
-            can explore in the game gallery.</span
-          >
+          </div>
         </div>
-        <ul class="category-list">
-          <li class="category-item">
-            <a href="/explore/genre-name" class="category-link">
-              <img src="path-to-icon" alt="Genre Icon" class="category-icon" />
-              <span>Genre Name</span>
-            </a>
-          </li>
-        </ul>
+        <ul class="ps4-game-list"></ul>
       </section>
     </main>
     <footer id="mainFooter"></footer>
